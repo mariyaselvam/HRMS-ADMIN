@@ -1,13 +1,16 @@
-import "./App.css";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { AppProviders } from '@/providers/AppProviders';
+import { AppRouter } from '@/routes/AppRoutes';
 
-function App() {
+export const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <h1>Get started</h1>
-      </div>
-    </>
+    <AppProviders>
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    </AppProviders>
   );
-}
+};
 
 export default App;

@@ -31,6 +31,7 @@ All code written in this repository MUST strictly follow these industry-standard
 
 ## 6. Styling & UI Consistency
 - **Tailwind CSS + shadcn/ui**: Use reusable UI primitives from `src/components/ui/`.
+- **Separation of Styles and Components**: Keep JSX clean by separating styles into dedicated `.styles.ts` files (e.g., `Sidebar.styles.ts`). Import style definitions into the `.tsx` component so TSX files remain focused purely on UI structure and interaction.
 - **Theme & Tokens**: Use Tailwind configuration and CSS variables for consistent colors, spacing, and typography.
 
 ## 7. Error Handling & UI States
