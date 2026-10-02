@@ -20,6 +20,12 @@ export const API_ENDPOINTS = {
   PAYROLL: {
     BASE: '/payroll',
   },
+  ORGANIZATION: {
+    DEPARTMENTS: '/departments',
+    LOCATIONS: '/locations',
+    HOLIDAYS: '/holidays',
+    SHIFTS: '/shifts',
+  },
   SETTINGS: {
     BASE: '/settings',
   },
