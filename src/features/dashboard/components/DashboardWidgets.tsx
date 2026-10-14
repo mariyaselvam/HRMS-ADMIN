@@ -1,6 +1,9 @@
-import React from 'react';
-import type { AttendanceToday, PendingApprovals } from '../types/dashboard.types';
-import { Clock, CheckCircle2, AlertCircle, CalendarDays } from 'lucide-react';
+import React from "react";
+import type {
+  AttendanceToday,
+  PendingApprovals,
+} from "../types/dashboard.types";
+import { Clock, CheckCircle2, AlertCircle, CalendarDays } from "lucide-react";
 import {
   widgetContainerClass,
   widgetHeaderClass,
@@ -24,13 +27,15 @@ import {
   approvalRowLabelClass,
   leaveBadgeClass,
   correctionBadgeClass,
-} from './DashboardWidgets.styles';
+} from "./DashboardWidgets.styles";
 
 interface AttendanceWidgetProps {
   attendance?: AttendanceToday;
 }
 
-export const AttendanceWidget: React.FC<AttendanceWidgetProps> = ({ attendance }) => {
+export const AttendanceWidget: React.FC<AttendanceWidgetProps> = ({
+  attendance,
+}) => {
   return (
     <div className={widgetContainerClass}>
       <div className={widgetHeaderClass}>
@@ -63,7 +68,9 @@ interface ApprovalsWidgetProps {
   approvals?: PendingApprovals;
 }
 
-export const ApprovalsWidget: React.FC<ApprovalsWidgetProps> = ({ approvals }) => {
+export const ApprovalsWidget: React.FC<ApprovalsWidgetProps> = ({
+  approvals,
+}) => {
   return (
     <div className={widgetContainerClass}>
       <div className={widgetHeaderClass}>
@@ -82,7 +89,9 @@ export const ApprovalsWidget: React.FC<ApprovalsWidgetProps> = ({ approvals }) =
             </div>
             <span className={approvalRowLabelClass}>Leave Requests</span>
           </div>
-          <span className={leaveBadgeClass}>{approvals?.leaveRequests ?? 0} Pending</span>
+          <span className={leaveBadgeClass}>
+            {approvals?.leaveRequests ?? 0} Pending
+          </span>
         </div>
 
         <div className={approvalRowClass}>
@@ -90,9 +99,13 @@ export const ApprovalsWidget: React.FC<ApprovalsWidgetProps> = ({ approvals }) =
             <div className={correctionIconBadgeClass}>
               <CheckCircle2 className="w-4 h-4" />
             </div>
-            <span className={approvalRowLabelClass}>Attendance Corrections</span>
+            <span className={approvalRowLabelClass}>
+              Attendance Corrections
+            </span>
           </div>
-          <span className={correctionBadgeClass}>{approvals?.attendanceCorrections ?? 0} Pending</span>
+          <span className={correctionBadgeClass}>
+            {approvals?.attendanceCorrections ?? 0} Pending
+          </span>
         </div>
       </div>
     </div>

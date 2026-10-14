@@ -8,21 +8,14 @@ export const API_ENDPOINTS = {
   DASHBOARD: {
     STATS: '/dashboard',
   },
-  EMPLOYEES: {
-    BASE: '/employees',
-  },
-  ATTENDANCE: {
-    BASE: '/attendance',
-  },
-  LEAVE: {
-    BASE: '/leave',
-  },
-  PAYROLL: {
-    BASE: '/payroll',
+  TENANTS: {
+    BASE: '/companies',
+    DETAIL: (id: string) => `/companies/${id}`,
+    STATUS: (id: string) => `/companies/${id}/status`,
   },
   ORGANIZATION: {
-    DEPARTMENTS: '/departments',
-    LOCATIONS: '/locations',
+    DEPARTMENTS: '/org/departments',
+    LOCATIONS: '/org/locations',
     HOLIDAYS: '/holidays',
     SHIFTS: '/shifts',
   },

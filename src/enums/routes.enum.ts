@@ -2,10 +2,8 @@ export enum AppRoutes {
   LOGIN = '/login',
   REGISTER = '/register',
   DASHBOARD = '/',
-  EMPLOYEES = '/employees',
-  ATTENDANCE = '/attendance',
-  LEAVE = '/leave',
-  PAYROLL = '/payroll',
+  TENANTS = '/companies',
+  TENANT_DETAIL = '/companies/:id',
   SETTINGS = '/settings',
   NOT_FOUND = '*',
 }

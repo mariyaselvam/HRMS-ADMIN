@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { AppRoutes } from '@/enums/routes.enum';
 import { LoginPage } from '@/features/auth/pages/LoginPage';
 import { DashboardPage } from '@/features/dashboard/pages/DashboardPage';
+import { TenantsPage } from '@/features/tenants/pages/TenantsPage';
+import { TenantDetailPage } from '@/features/tenants/pages/TenantDetailPage';
 import { SettingsPage } from '@/features/organization/pages/SettingsPage';
 import { AdminLayout } from '@/components/layout/AdminLayout';
 import { ProtectedRoute } from './ProtectedRoute';
@@ -15,6 +17,8 @@ export const AppRouter: React.FC = () => {
       <Route element={<ProtectedRoute />}>
         <Route element={<AdminLayout />}>
           <Route path={AppRoutes.DASHBOARD} element={<DashboardPage />} />
+          <Route path={AppRoutes.TENANTS} element={<TenantsPage />} />
+          <Route path={AppRoutes.TENANT_DETAIL} element={<TenantDetailPage />} />
           <Route path={AppRoutes.SETTINGS} element={<SettingsPage />} />
         </Route>
       </Route>

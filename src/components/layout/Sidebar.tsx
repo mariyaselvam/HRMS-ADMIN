@@ -4,12 +4,8 @@ import { useAppSelector } from '@/store';
 import { AppRoutes } from '@/enums/routes.enum';
 import {
   LayoutDashboard,
-  Users,
-  Clock,
-  CalendarDays,
-  CreditCard,
-  Settings,
   Building2,
+  Settings,
 } from 'lucide-react';
 import {
   sidebarVariants,
@@ -26,12 +22,9 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: 'Dashboard', path: AppRoutes.DASHBOARD, icon: LayoutDashboard },
-  { label: 'Employees', path: AppRoutes.EMPLOYEES, icon: Users },
-  { label: 'Attendance', path: AppRoutes.ATTENDANCE, icon: Clock },
-  { label: 'Leave', path: AppRoutes.LEAVE, icon: CalendarDays },
-  { label: 'Payroll', path: AppRoutes.PAYROLL, icon: CreditCard },
-  { label: 'Settings', path: AppRoutes.SETTINGS, icon: Settings },
+  { label: 'Platform Dashboard', path: AppRoutes.DASHBOARD, icon: LayoutDashboard },
+  { label: 'Client Organizations', path: AppRoutes.TENANTS, icon: Building2 },
+  { label: 'Platform Settings', path: AppRoutes.SETTINGS, icon: Settings },
 ];
 
 export const Sidebar: React.FC = () => {
@@ -47,9 +40,9 @@ export const Sidebar: React.FC = () => {
         {isSidebarOpen && (
           <div className="overflow-hidden whitespace-nowrap">
             <h2 className="text-base font-bold text-white tracking-wide leading-tight">
-              HRMS Admin
+              HRMS Control
             </h2>
-            <p className="text-[11px] text-slate-400 font-medium">Enterprise Suite</p>
+            <p className="text-[11px] text-blue-400 font-medium">Super Admin Console</p>
           </div>
         )}
       </div>

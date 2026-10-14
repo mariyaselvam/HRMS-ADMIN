@@ -1,5 +1,5 @@
-import { apiClient } from '@/services/api/apiClient';
-import type { AxiosRequestConfig } from 'axios';
+import { apiClient } from "@/services/api/apiClient";
+import type { AxiosRequestConfig } from "axios";
 
 /**
  * Standard HTTP Service wrapper around Axios client.
@@ -10,7 +10,11 @@ export const baseHttpService = {
   /**
    * Generic GET request
    */
-  async get<T>(endpoint: string, params?: Record<string, any>, config?: AxiosRequestConfig): Promise<T> {
+  async get<T>(
+    endpoint: string,
+    params?: Record<string, any>,
+    config?: AxiosRequestConfig,
+  ): Promise<T> {
     const response = await apiClient.get<T>(endpoint, {
       params,
       ...config,
@@ -21,7 +25,11 @@ export const baseHttpService = {
   /**
    * Generic POST request
    */
-  async post<T>(endpoint: string, body?: any, config?: AxiosRequestConfig): Promise<T> {
+  async post<T>(
+    endpoint: string,
+    body?: any,
+    config?: AxiosRequestConfig,
+  ): Promise<T> {
     const response = await apiClient.post<T>(endpoint, body, config);
     return response.data;
   },
@@ -29,7 +37,11 @@ export const baseHttpService = {
   /**
    * Generic PUT request
    */
-  async put<T>(endpoint: string, body?: any, config?: AxiosRequestConfig): Promise<T> {
+  async put<T>(
+    endpoint: string,
+    body?: any,
+    config?: AxiosRequestConfig,
+  ): Promise<T> {
     const response = await apiClient.put<T>(endpoint, body, config);
     return response.data;
   },
@@ -37,7 +49,11 @@ export const baseHttpService = {
   /**
    * Generic PATCH request
    */
-  async patch<T>(endpoint: string, body?: any, config?: AxiosRequestConfig): Promise<T> {
+  async patch<T>(
+    endpoint: string,
+    body?: any,
+    config?: AxiosRequestConfig,
+  ): Promise<T> {
     const response = await apiClient.patch<T>(endpoint, body, config);
     return response.data;
   },
@@ -53,16 +69,20 @@ export const baseHttpService = {
   /**
    * Download binary file/blob (e.g. PDFs, Excel exports)
    */
-  async download(endpoint: string, filename: string, params?: Record<string, any>): Promise<void> {
+  async download(
+    endpoint: string,
+    filename: string,
+    params?: Record<string, any>,
+  ): Promise<void> {
     const response = await apiClient.get(endpoint, {
       params,
-      responseType: 'blob',
+      responseType: "blob",
     });
 
     const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.setAttribute('download', filename);
+    link.setAttribute("download", filename);
     document.body.appendChild(link);
     link.click();
     link.remove();

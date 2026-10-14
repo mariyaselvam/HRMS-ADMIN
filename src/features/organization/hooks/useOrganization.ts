@@ -24,7 +24,7 @@ export const ORG_QUERY_KEYS = {
   SHIFTS: ['organization', 'shifts'],
 } as const;
 
-// Departments Hooks
+
 export const useDepartments = () => {
   return useQuery({
     queryKey: ORG_QUERY_KEYS.DEPARTMENTS,
